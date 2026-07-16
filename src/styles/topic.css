@@ -1,0 +1,203 @@
+/* ==========================================================
+   Topic Page
+========================================================== */
+
+.topic-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 110px;
+}
+
+.topic-section-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* ==========================================================
+   Topic Header
+========================================================== */
+
+.topic-header {
+  position: sticky;
+  top: 64px; /* adjust to your navbar height */
+  z-index: 20;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 24px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topic-header__left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topic-header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topic-header__info h1 {
+  margin: 0;
+
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.topic-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topic-header__time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .topic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .topic-header__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================
+   Topic Page Layout
+========================================================== */
+
+.topic-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.topic-page__body {
+  padding: 32px;
+}
+/* ==========================================================
+   Topic Hero
+========================================================== */
+
+.topic-hero {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+}
+
+.topic-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.topic-hero__back:hover {
+  color: #2563eb;
+}
+
+.topic-hero__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.topic-hero h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.topic-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.topic-hero__time,
+.topic-hero__category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+}
+
+.topic-hero p {
+  max-width: 720px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+/* ==========================================================
+   Documentation Layout
+========================================================== */
+
+.topic-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+}
+
+.topic-sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.topic-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topic-sidebar__link {
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.topic-sidebar__link:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.topic-content {
+  min-width: 0;
+}

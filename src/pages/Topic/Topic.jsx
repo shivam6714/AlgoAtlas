@@ -1,40 +1,33 @@
-﻿import { useParams } from "react-router-dom";
-import { allTopics } from "../../data/allTopics";
+﻿import { useNavigate } from "react-router-dom";
+
+import TopicHero from "../../components/topic/TopicHero";
+import TopicLayout from "../../components/topic/TopicLayout";
+
+import "../../styles/topic.css";
 
 const Topic = () => {
+  const navigate = useNavigate();
 
-  const { slug } = useParams();
-
-  const topic = allTopics.find(
-    (item) => item.slug === slug
-  );
-
-  if (!topic) {
-
-    return <h2>Topic Not Found</h2>;
-
-  }
+  const topic = {
+    title: "Bubble Sort",
+    difficulty: "Easy",
+    estimatedTime: "15 min",
+    category: "Sorting",
+    description:
+      "Learn one of the simplest comparison-based sorting algorithms and understand how it works step by step.",
+  };
 
   return (
+    <div className="topic-page">
+      <TopicHero
+        {...topic}
+        onBack={() => navigate(-1)}
+        onBookmark={() => console.log("Bookmark")}
+      />
 
-    <div>
-
-      <h1>{topic.title}</h1>
-
-      <p>{topic.description}</p>
-
-      <br />
-
-      <strong>Difficulty:</strong> {topic.difficulty}
-
-      <br />
-
-      <strong>Estimated Time:</strong> {topic.estimatedTime}
-
+      <TopicLayout />
     </div>
-
   );
-
 };
 
 export default Topic;
