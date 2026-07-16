@@ -201,3 +201,119 @@
 .topic-content {
   min-width: 0;
 }
+/* ==========================================================
+   Complexity Card
+========================================================== */
+
+.complexity-card {
+  padding: 24px;
+}
+
+.complexity-card h3 {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+}
+
+.complexity-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.complexity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.complexity-row:last-child {
+  border-bottom: none;
+}
+
+.complexity-row span {
+  color: #6B7280;
+}
+
+.complexity-row strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   Code Preview
+========================================================== */
+
+.code-preview {
+  overflow: hidden;
+}
+
+.code-preview__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.code-language {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563EB;
+}
+
+.code-preview pre {
+  margin: 0;
+  overflow-x: auto;
+
+  padding: 20px;
+
+  background: #111827;
+  border-radius: 10px;
+
+  color: #F9FAFB;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.code-preview code {
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    monospace;
+}
+
+/* ==========================================================
+   Practice
+========================================================== */
+
+.practice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.practice-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.practice-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.practice-card__info h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #111827;
+}
