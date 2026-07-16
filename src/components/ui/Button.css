@@ -1,0 +1,45 @@
+.btn{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.secondary{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+}
+
+.secondary:hover{
+
+    background:#F3F4F6;
+
+}

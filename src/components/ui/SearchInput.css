@@ -1,0 +1,39 @@
+.search-input{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:12px 18px;
+
+    width:100%;
+
+}
+
+.search-input input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    background:transparent;
+
+    font-size:15px;
+
+}
+
+.search-input svg{
+
+    color:var(--text2);
+
+}
