@@ -1,4 +1,6 @@
-﻿const sections = [
+﻿import useScrollSpy from "../../hooks/useScrollSpy";
+
+const sections = [
   { id: "theory", label: "Theory" },
   { id: "visualization", label: "Visualization" },
   { id: "dry-run", label: "Dry Run" },
@@ -10,14 +12,22 @@
 ];
 
 const TopicSidebar = () => {
+  const activeSection = useScrollSpy(
+    sections.map((section) => section.id)
+  );
+
   return (
     <aside className="topic-sidebar">
+      <h3 className="topic-sidebar__title">Contents</h3>
+
       <nav>
         {sections.map((section) => (
           <a
             key={section.id}
             href={`#${section.id}`}
-            className="topic-sidebar__link"
+            className={`topic-sidebar__link ${
+              activeSection === section.id ? "active" : ""
+            }`}
           >
             {section.label}
           </a>

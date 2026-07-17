@@ -317,3 +317,72 @@
   font-size: 1rem;
   color: #111827;
 }
+
+/* ==========================================================
+   Topic Sidebar
+========================================================== */
+
+.topic-sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+.topic-sidebar__title {
+  margin: 0 0 16px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #6B7280;
+}
+
+.topic-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topic-sidebar__link {
+  position: relative;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #6B7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.topic-sidebar__link:hover {
+  background: #F3F4F6;
+  color: #111827;
+}
+
+.topic-sidebar__link.active {
+  background: #EFF6FF;
+  color: #2563EB;
+  font-weight: 600;
+}
+
+.topic-sidebar__link.active::before {
+  content: "";
+
+  position: absolute;
+  left: -10px;
+  top: 50%;
+
+  width: 4px;
+  height: 22px;
+
+  transform: translateY(-50%);
+
+  background: #2563EB;
+  border-radius: 999px;
+}
