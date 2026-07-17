@@ -1,6 +1,7 @@
 import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import Button from "../ui/Button";
+import { ArrowRight } from "lucide-react";
 
 const PracticeCard = ({
   title,
@@ -14,7 +15,10 @@ const PracticeCard = ({
         <Badge>{difficulty}</Badge>
       </div>
 
-      <Button variant="primary">
+      <Button
+        variant="primary"
+        icon={<ArrowRight size={16} />}
+      >
         Solve
       </Button>
     </Card>

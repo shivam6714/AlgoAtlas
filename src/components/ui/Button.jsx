@@ -5,6 +5,7 @@ const Button = ({
   onClick,
   type = "button",
   variant = "primary",
+  icon,
 }) => {
   return (
     <button
@@ -12,7 +13,9 @@ const Button = ({
       onClick={onClick}
       className={`btn ${variant}`}
     >
-      {children}
+      {icon && <span className="btn-icon">{icon}</span>}
+
+      {children && <span>{children}</span>}
     </button>
   );
 };

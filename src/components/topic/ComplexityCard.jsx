@@ -1,29 +1,39 @@
 ﻿import Card from "../ui/Card";
 
-const ComplexityCard = ({
-  best = "O(n)",
-  average = "O(n²)",
-  worst = "O(n²)",
-  space = "O(1)",
-}) => {
-  const rows = [
-    { label: "Best", value: best },
-    { label: "Average", value: average },
-    { label: "Worst", value: worst },
-    { label: "Space", value: space },
+const ComplexityCard = () => {
+  const timeComplexity = [
+    { label: "Best", value: "O(n)" },
+    { label: "Average", value: "O(n²)" },
+    { label: "Worst", value: "O(n²)" },
   ];
 
   return (
     <Card className="complexity-card">
       <h3>Complexity Analysis</h3>
 
-      <div className="complexity-table">
-        {rows.map((row) => (
-          <div key={row.label} className="complexity-row">
-            <span>{row.label}</span>
-            <strong>{row.value}</strong>
+      <div className="complexity-section">
+        <h4>Time Complexity</h4>
+
+        {timeComplexity.map((item) => (
+          <div
+            key={item.label}
+            className="complexity-row"
+          >
+            <span>{item.label}</span>
+            <code>{item.value}</code>
           </div>
         ))}
+      </div>
+
+      <div className="complexity-divider" />
+
+      <div className="complexity-section">
+        <h4>Space Complexity</h4>
+
+        <div className="complexity-row">
+          <span>Auxiliary Space</span>
+          <code>O(1)</code>
+        </div>
       </div>
     </Card>
   );

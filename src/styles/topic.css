@@ -3,8 +3,17 @@
 ========================================================== */
 
 .topic-section {
-  margin-bottom: 64px;
-  scroll-margin-top: 110px;
+  margin-bottom: 80px;
+
+  padding-bottom: 40px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  scroll-margin-top: 100px;
+}
+
+.topic-section:last-child {
+  border-bottom: none;
 }
 
 .topic-section-content {
@@ -102,8 +111,9 @@
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
+
   padding: 28px 32px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .topic-hero__back {
@@ -120,6 +130,8 @@
 
   color: #6b7280;
   font-size: 0.95rem;
+
+  transition: color 0.2s ease;
 }
 
 .topic-hero__back:hover {
@@ -133,33 +145,49 @@
   gap: 32px;
 }
 
-.topic-hero h1 {
+.topic-hero__left {
+  flex: 1;
+}
+
+.topic-hero__left h1 {
   margin: 0;
-  font-size: 2.25rem;
+
+  font-size: 2.75rem;
   font-weight: 700;
+
   color: #111827;
 }
 
 .topic-hero__meta {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 16px 0;
+  gap: 14px;
+
+  margin: 18px 0;
 }
 
-.topic-hero__time,
-.topic-hero__category {
+.topic-hero__category,
+.topic-hero__time {
   display: flex;
   align-items: center;
   gap: 6px;
+
   color: #6b7280;
 }
 
-.topic-hero p {
-  max-width: 720px;
-  color: #6b7280;
-  line-height: 1.7;
+.topic-hero__left p {
+  max-width: 760px;
+
   margin: 0;
+
+  color: #6b7280;
+
+  line-height: 1.8;
+}
+
+.topic-hero__actions {
+  display: flex;
+  align-items: flex-start;
 }
 /* ==========================================================
    Documentation Layout
@@ -167,14 +195,23 @@
 
 .topic-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 220px minmax(0, 860px);
   gap: 48px;
 }
 
 .topic-sidebar {
   position: sticky;
   top: 90px;
+
   align-self: start;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
 }
 
 .topic-sidebar nav {
@@ -184,22 +221,36 @@
 }
 
 .topic-sidebar__link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
   padding: 10px 14px;
+
   border-radius: 8px;
 
-  color: #6b7280;
+  color: #6B7280;
   text-decoration: none;
+
   font-size: 0.95rem;
-  transition: all 0.2s ease;
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .topic-sidebar__link:hover {
-  background: #f3f4f6;
+  background: #F9FAFB;
   color: #111827;
+  transform: translateX(4px);
 }
 
 .topic-content {
-  min-width: 0;
+  width: 100%;
+  max-width: 860px;
 }
 /* ==========================================================
    Complexity Card
@@ -211,12 +262,18 @@
 
 .complexity-card h3 {
   margin: 0 0 20px;
-  font-size: 1.1rem;
+
+  font-size: 1.25rem;
+  color: #111827;
 }
 
-.complexity-table {
-  display: flex;
-  flex-direction: column;
+.complexity-section h4 {
+  margin: 0 0 16px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  color: #6B7280;
 }
 
 .complexity-row {
@@ -224,22 +281,27 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 14px 0;
+  padding: 10px 0;
 
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 .complexity-row:last-child {
   border-bottom: none;
 }
 
-.complexity-row span {
-  color: #6B7280;
+.complexity-row code {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+
+  color: #2563EB;
 }
 
-.complexity-row strong {
-  color: #111827;
-  font-weight: 600;
+.complexity-divider {
+  height: 1px;
+  margin: 24px 0;
+
+  background: #E5E7EB;
 }
 
 /* ==========================================================
@@ -255,31 +317,42 @@
   justify-content: space-between;
   align-items: center;
 
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  padding: 12px 18px;
 
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .code-language {
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+
+  background: #eff6ff;
+
+  border-radius: 999px;
+
+  color: #2563eb;
+
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #2563EB;
 }
 
 .code-preview pre {
   margin: 0;
+
+  padding: 24px;
+
   overflow-x: auto;
 
-  padding: 20px;
+  border-radius: 12px;
 
   background: #111827;
-  border-radius: 10px;
 
   color: #F9FAFB;
 
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .code-preview code {
@@ -287,6 +360,8 @@
     "JetBrains Mono",
     "Fira Code",
     monospace;
+
+  white-space: pre;
 }
 
 /* ==========================================================
@@ -303,21 +378,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+
+  padding: 20px 24px;
 }
 
 .practice-card__info {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 14px;
 }
 
 .practice-card__info h3 {
   margin: 0;
-  font-size: 1rem;
-  color: #111827;
-}
 
+  font-size: 1rem;
+  font-weight: 600;
+}
 /* ==========================================================
    Topic Sidebar
 ========================================================== */

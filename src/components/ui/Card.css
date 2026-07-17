@@ -1,11 +1,18 @@
-.card{
+.card {
+  background: #FFFFFF;
 
-    background:white;
+  border: 1px solid #E5E7EB;
 
-    border-radius:18px;
+  border-radius: 16px;
 
-    padding:25px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
-    box-shadow:var(--shadow);
+.card:hover {
+  transform: translateY(-2px);
 
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
 }

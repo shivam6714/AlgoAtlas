@@ -19,32 +19,34 @@ const TopicHero = ({
       </button>
 
       <div className="topic-hero__content">
-        <div>
+        <div className="topic-hero__left">
           <h1>{title}</h1>
 
           <div className="topic-hero__meta">
             <Badge>{difficulty}</Badge>
 
+            <span className="topic-hero__category">
+              {category}
+            </span>
+
             <span className="topic-hero__time">
               <Clock size={16} />
               {estimatedTime}
-            </span>
-
-            <span className="topic-hero__category">
-              {category}
             </span>
           </div>
 
           <p>{description}</p>
         </div>
 
-        <Button
-          variant="secondary"
-          icon={<Bookmark size={18} />}
-          onClick={onBookmark}
-        >
-          Bookmark
-        </Button>
+        <div className="topic-hero__actions">
+          <Button
+            variant="secondary"
+            icon={<Bookmark size={16} />}
+            onClick={onBookmark}
+          >
+            Bookmark
+          </Button>
+        </div>
       </div>
     </section>
   );

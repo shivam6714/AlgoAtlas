@@ -1,5 +1,5 @@
 import Card from "../ui/Card";
-import Button from "../ui/Button";
+import IconButton from "../ui/IconButton";
 import { Copy } from "lucide-react";
 
 const sampleCode = `void bubbleSort(vector<int>& arr) {
@@ -20,12 +20,11 @@ const CodePreview = () => {
       <div className="code-preview__header">
         <span className="code-language">C++</span>
 
-        <Button
-          variant="ghost"
+        <IconButton
           icon={<Copy size={16} />}
         >
           Copy
-        </Button>
+        </IconButton>
       </div>
 
       <pre>
