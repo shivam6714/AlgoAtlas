@@ -1,9 +1,8 @@
 import TopicSection from "./TopicSection";
-import { getCode } from "../../code";
+import { getCode, getPractice } from "../../topics";
 import ComplexityCard from "./ComplexityCard";
 import CodePreview from "./CodePreview";
 import PracticeList from "./PracticeList";
-import { getPractice } from "../../practice";
 import MDXContent from "./MDXContent";
 const TopicContent = ({ topic }) => {
     console.log("Current topic:", topic.slug);

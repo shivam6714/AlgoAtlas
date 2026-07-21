@@ -1,4 +1,4 @@
-import { getTopicContent } from "../../lib/mdx";
+import { getTopicContent } from "../../topics";
 
 const MDXContent = ({ slug }) => {
   const Content = getTopicContent(slug);
