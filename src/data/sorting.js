@@ -15,4 +15,20 @@ export const sortingTopics = [
       space: "O(1)",
     },
   },
+  {
+    slug: "selection-sort",
+    title: "Selection Sort",
+    difficulty: "Easy",
+    estimatedTime: "20 min",
+    category: "Sorting",
+    description:
+      "Learn how Selection Sort works by repeatedly finding the minimum element from the unsorted part and placing it at the beginning.",
+
+    complexity: {
+      best: "O(n²)",
+      average: "O(n²)",
+      worst: "O(n²)",
+      space: "O(1)",
+    },
+  },
 ];
