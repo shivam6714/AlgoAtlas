@@ -22,13 +22,13 @@ const Category = () => {
 
             <div className="topic-list">
 
-                {topics.map((topic)=>{
+                {topics.map((topic) => {
 
-                    return(
+                    return (
 
                         <TopicCard
 
-                            key={topic.id}
+                            key={topic.slug}
 
                             topic={topic}
 

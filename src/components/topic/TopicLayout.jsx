@@ -1,11 +1,11 @@
 import TopicSidebar from "./TopicSidebar";
 import TopicContent from "./TopicContent";
 
-const TopicLayout = () => {
+const TopicLayout = ({ topic }) => {
   return (
     <section className="topic-layout">
       <TopicSidebar />
-      <TopicContent />
+      <TopicContent topic={topic} />
     </section>
   );
 };

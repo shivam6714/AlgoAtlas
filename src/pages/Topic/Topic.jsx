@@ -1,21 +1,16 @@
-﻿import { useNavigate } from "react-router-dom";
+﻿import { useNavigate, useParams } from "react-router-dom";
 
 import TopicHero from "../../components/topic/TopicHero";
 import TopicLayout from "../../components/topic/TopicLayout";
+import { getTopicBySlug } from "../../data/topics";
 
 import "../../styles/topic.css";
 
 const Topic = () => {
   const navigate = useNavigate();
+  const { slug } = useParams();
 
-  const topic = {
-    title: "Bubble Sort",
-    difficulty: "Easy",
-    estimatedTime: "15 min",
-    category: "Sorting",
-    description:
-      "Learn one of the simplest comparison-based sorting algorithms and understand how it works step by step.",
-  };
+  const topic = getTopicBySlug(slug);
 
   return (
     <div className="topic-page">
@@ -25,7 +20,7 @@ const Topic = () => {
         onBookmark={() => console.log("Bookmark")}
       />
 
-      <TopicLayout />
+      <TopicLayout topic={topic} />
     </div>
   );
 };

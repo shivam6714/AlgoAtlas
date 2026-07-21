@@ -1,10 +1,10 @@
 ﻿import Card from "../ui/Card";
 
-const ComplexityCard = () => {
+const ComplexityCard = ({ complexity }) => {
   const timeComplexity = [
-    { label: "Best", value: "O(n)" },
-    { label: "Average", value: "O(n²)" },
-    { label: "Worst", value: "O(n²)" },
+    { label: "Best", value: complexity.best },
+    { label: "Average", value: complexity.average },
+    { label: "Worst", value: complexity.worst },
   ];
 
   return (
@@ -32,7 +32,7 @@ const ComplexityCard = () => {
 
         <div className="complexity-row">
           <span>Auxiliary Space</span>
-          <code>O(1)</code>
+          <code>{complexity.space}</code>
         </div>
       </div>
     </Card>

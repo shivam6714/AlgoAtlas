@@ -1,16 +1,18 @@
 import TopicSection from "./TopicSection";
+import { getCode } from "../../code";
 import ComplexityCard from "./ComplexityCard";
 import CodePreview from "./CodePreview";
 import PracticeList from "./PracticeList";
-
-const TopicContent = () => {
+import { getPractice } from "../../practice";
+import MDXContent from "./MDXContent";
+const TopicContent = ({ topic }) => {
+    console.log("Current topic:", topic.slug);
+    const code = getCode(topic.slug);
+    const practice = getPractice(topic.slug);
     return (
         <main className="topic-content">
             <TopicSection id="theory" title="Theory">
-                <p>
-                    Bubble Sort repeatedly compares adjacent elements and swaps them if
-                    they are in the wrong order.
-                </p>
+                <MDXContent slug={topic.slug} />
             </TopicSection>
 
             <TopicSection id="visualization" title="Visualization">
@@ -22,11 +24,11 @@ const TopicContent = () => {
             </TopicSection>
 
             <TopicSection id="complexity" title="Complexity">
-                <ComplexityCard />
+                <ComplexityCard complexity={topic.complexity} />
             </TopicSection>
 
             <TopicSection id="code" title="Code">
-                <CodePreview />
+                {code && <CodePreview code={code} />}
             </TopicSection>
 
             <TopicSection id="applications" title="Applications">
@@ -34,7 +36,7 @@ const TopicContent = () => {
             </TopicSection>
 
             <TopicSection id="practice" title="Practice Problems">
-                <PracticeList />
+                <PracticeList problems={practice} />
             </TopicSection>
 
             <TopicSection id="notes" title="Notes">

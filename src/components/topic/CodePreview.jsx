@@ -2,19 +2,15 @@ import Card from "../ui/Card";
 import IconButton from "../ui/IconButton";
 import { Copy } from "lucide-react";
 
-const sampleCode = `void bubbleSort(vector<int>& arr) {
-    int n = arr.size();
-
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr[j], arr[j + 1]);
-            }
-        }
+const CodePreview = ({ code }) => {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code.cpp);
+    } catch (err) {
+      console.error("Failed to copy code:", err);
     }
-}`;
+  };
 
-const CodePreview = () => {
   return (
     <Card className="code-preview">
       <div className="code-preview__header">
@@ -22,13 +18,14 @@ const CodePreview = () => {
 
         <IconButton
           icon={<Copy size={16} />}
+          onClick={handleCopy}
         >
           Copy
         </IconButton>
       </div>
 
       <pre>
-        <code>{sampleCode}</code>
+        <code>{code.cpp}</code>
       </pre>
     </Card>
   );
